@@ -11,7 +11,8 @@
   </head>
 
   <body>
-    <p class="text-primary">aaaaaaaaaaaaaa</p>
+    @include('templates.navbar')
+    @yield('content')
 
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/popper.js') }}"></script>
