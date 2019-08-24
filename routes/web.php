@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', function(){
     return view('templates.main');
 });
+Route::resource('/supplier', 'Loja\FornecedoresController');

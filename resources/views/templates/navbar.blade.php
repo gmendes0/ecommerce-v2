@@ -15,7 +15,7 @@
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Fornecedor</a>
           <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Novo fornecedor</a>
+            <a href="{{ route('supplier.create') }}" class="dropdown-item">Novo fornecedor</a>
           </div>
         </li>
       </ul>
