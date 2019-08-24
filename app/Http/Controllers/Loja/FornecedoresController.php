@@ -14,9 +14,10 @@ class FornecedoresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Fornecedor $fornecedor)
     {
-        //
+        $fornecedores = $fornecedor->all();
+        return view('fornecedor.index', compact('fornecedores'));
     }
 
     /**
@@ -38,6 +39,12 @@ class FornecedoresController extends Controller
     public function store(FornecedorRequest $request, Fornecedor $fornecedor)
     {
         $insert = $fornecedor->create($request->all());
+
+        if($insert){
+            return redirect()->route('supplier.index');
+        }else{
+            return redirect()->back();
+        }
     }
 
     /**
