@@ -6,7 +6,7 @@
       <h2 class="text-center text-muted">Fornecedores</h2>
     </div>
 
-    <table class="table">
+    <table class="table shadow-lg">
       <thead class="table-dark">
         <th>Nome</th>
         <th>Ativo</th>
@@ -21,7 +21,7 @@
             <td class="text-right">
               <a href="{{ route('supplier.show', $fornecedor->id) }}" class="btn btn-info">Detalhes</a>
               <a href="{{ route('supplier.edit', $fornecedor->id) }}" class="btn btn-warning">Editar</a>
-              <a href="#" class="btn btn-danger">Apagar</a>
+              <button href="{{ route('supplier.destroy', $fornecedor->id) }}" class="btn btn-danger">Apagar</button>
             </td>
           </tr>
         @empty
@@ -35,3 +35,6 @@
     </table>
   </div>
 @endsection
+@push('jscripts')
+
+@endpush
