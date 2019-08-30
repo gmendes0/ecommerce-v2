@@ -2,9 +2,9 @@
 @section('title', isset($supplier) ? 'Editar Fornecedor' : 'Novo Fornecedor')
 @section('content')
   <div class="container">
-    <div class="col-12 p-5 mb-5">
-      <h2 class="text-center text-muted">{{ isset($supplier) ? 'Editar Fornecedor - #'.$supplier->id : 'Novo Fornecedor'}}</h2>
-    </div>
+    @component('components.title')
+      {{ isset($supplier) ? 'Editar Fornecedor - #'.$supplier->id : 'Novo Fornecedor'}}
+    @endcomponent
 
     @if(!empty($errors->all()))
       @foreach($errors->all() as $error)
