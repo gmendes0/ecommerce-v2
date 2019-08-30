@@ -8,10 +8,14 @@
         <h3 class="mt-5 mb-5 text-center">FORNECEDOR - {{ $supplier->nome }}</h3>
         <div class="card mt-5 mb-5">
             <div class="card-header">
+              <form action="{{ route('supplier.destroy', $supplier->id) }}" method="POST">
                 <!-- link edit -->
                 <a href="{{route('supplier.edit', $supplier->id)}}" class="btn btn-outline-warning">editar</a>
                 <!-- link delete -->
-                <a href="#" class="btn btn-outline-danger">apagar</a>
+                <input type="submit" value="apagar" class="btn btn-outline-danger"/>
+                @method('DELETE')
+                @csrf
+              </form>
             </div>
             <div class="card-body">
               <h6 class="card-title text-center"><span class="text-muted">nome: </span><span>{{ ucwords($supplier->nome) }}</span></h6>
