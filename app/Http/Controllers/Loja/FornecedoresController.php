@@ -65,9 +65,10 @@ class FornecedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Fornecedor $fornecedor, $id)
     {
-        //
+        $supplier = $fornecedor->find($id);
+        return view('fornecedor.create', compact('supplier'));
     }
 
     /**
@@ -77,7 +78,7 @@ class FornecedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FornecedorRequest $request, $id)
     {
         //
     }

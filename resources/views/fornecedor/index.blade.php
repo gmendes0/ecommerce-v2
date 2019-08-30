@@ -20,7 +20,7 @@
             <td>{{ $fornecedor->active ? 'ATIVO' : 'INATIVO' }}</td>
             <td class="text-right">
               <a href="{{ route('supplier.show', $fornecedor->id) }}" class="btn btn-info">Detalhes</a>
-              <a href="#" class="btn btn-warning">Editar</a>
+              <a href="{{ route('supplier.edit', $fornecedor->id) }}" class="btn btn-warning">Editar</a>
               <a href="#" class="btn btn-danger">Apagar</a>
             </td>
           </tr>

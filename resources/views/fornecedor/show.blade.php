@@ -9,7 +9,7 @@
         <div class="card mt-5 mb-5">
             <div class="card-header">
                 <!-- link edit -->
-                <a href="#" class="btn btn-outline-warning">editar</a>
+                <a href="{{route('supplier.edit', $supplier->id)}}" class="btn btn-outline-warning">editar</a>
                 <!-- link delete -->
                 <a href="#" class="btn btn-outline-danger">apagar</a>
             </div>
