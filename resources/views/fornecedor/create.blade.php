@@ -1,9 +1,9 @@
 @extends('templates.main')
-@section('title', 'Novo Fornecedor')
+@section('title', isset($supplier) ? 'Editar Fornecedor' : 'Novo Fornecedor')
 @section('content')
   <div class="container">
     <div class="col-12 p-5 mb-5">
-      <h2 class="text-center text-muted">{{ isset($supplier) ? 'Editar Fornecedor' : 'Novo Fornecedor'}}</h2>
+      <h2 class="text-center text-muted">{{ isset($supplier) ? 'Editar Fornecedor - #'.$supplier->id : 'Novo Fornecedor'}}</h2>
     </div>
 
     @if(!empty($errors->all()))
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="text-center">
-        <input class="btn btn-success mb-5" type="submit" value="cadastrar"/>
+        <input class="btn btn-success mb-5" type="submit" value="{{isset($supplier) ? 'atualizar' : 'cadastrar'}}"/>
       </div>
       @if(isset($supplier))
         @method('PUT')
