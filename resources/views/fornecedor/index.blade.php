@@ -19,9 +19,13 @@
             <td>{{ $fornecedor->nome }}</td>
             <td>{{ $fornecedor->active ? 'ATIVO' : 'INATIVO' }}</td>
             <td class="text-right">
-              <a href="{{ route('supplier.show', $fornecedor->id) }}" class="btn btn-info">Detalhes</a>
-              <a href="{{ route('supplier.edit', $fornecedor->id) }}" class="btn btn-warning">Editar</a>
-              <button href="{{ route('supplier.destroy', $fornecedor->id) }}" class="btn btn-danger">Apagar</button>
+              <form action="{{ route('supplier.destroy', $fornecedor->id) }}" method="post">
+                <a href="{{ route('supplier.show', $fornecedor->id) }}" class="btn btn-info">Detalhes</a>
+                <a href="{{ route('supplier.edit', $fornecedor->id) }}" class="btn btn-warning">Editar</a>
+                <input type="submit" value="Apagar" class="btn btn-danger"/>
+                @method('DELETE')
+                @csrf
+              </form>
             </td>
           </tr>
         @empty
