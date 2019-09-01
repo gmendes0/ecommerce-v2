@@ -20,6 +20,30 @@
           </div>
         </li>
       </ul>
+
+      <ul class="navbar-nav ml-auto">
+        @guest
+          <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+          <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Registrar</a></li>
+        @else
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
+            <div class="dropdown-menu">
+              <a id="logout-btn" href="#" class="dropdown-item">Logout</a>
+            </div>
+          </li>
+          <form id="logout-form" action="{{ route('logout') }}" method="post">
+            @csrf
+          </form>
+          <script>
+            document.querySelector('#logout-btn').addEventListener('click', logout)
+            function logout(){
+              event.preventDefault()
+              document.querySelector('#logout-form').submit()
+            }
+          </script>
+        @endguest
+      </ul>
     </div>
   </div>
 </nav>

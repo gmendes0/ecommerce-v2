@@ -17,4 +17,7 @@
 Route::get('/', function(){
     return view('templates.main');
 });
+
+Auth::routes();
 Route::resource('/supplier', 'Loja\FornecedoresController');
+Route::get('/home', 'HomeController@index')->name('home');
