@@ -15,3 +15,4 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::redirect('/', '/supplier');
 Route::resource('/supplier', 'Loja\FornecedoresController');
+Route::resource('/product', 'Loja\ProdutosController');

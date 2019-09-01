@@ -19,6 +19,13 @@
             <a href="{{ route('supplier.create') }}" class="dropdown-item">Novo fornecedor</a>
           </div>
         </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Produto</a>
+          <div class="dropdown-menu">
+            <a href="{{ route('product.index') }}" class="dropdown-item">Produtos</a>
+            <a href="#" class="dropdown-item">Novo produto</a>
+          </div>
+        </li>
       </ul>
 
       <ul class="navbar-nav ml-auto">
