@@ -6,12 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fornecedor extends Model
 {
-    /**
-     * Table name
-     * 
-     * @var string $table
-     */
-    protected $table = 'fornecedores';
+	/**
+	 * Table name
+	 * 
+	 * @var string $table
+	 */
+	protected $table = 'fornecedores';
 
-    protected $fillable = ['nome', 'email', 'cnpj', 'active'];
+	protected $fillable = ['nome', 'email', 'cnpj', 'active'];
+
+	public function produtos(){
+		return $this->hasMany('App\Entities\Produto');
+	}
 }

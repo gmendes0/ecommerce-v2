@@ -5,7 +5,9 @@
   @section('title', 'Fornecedor - '.$supplier->nome)
   @section('content')
     <div class="container">
-        <h3 class="mt-5 mb-5 text-center">FORNECEDOR - {{ $supplier->nome }}</h3>
+        @component('components.title')
+          {{ 'FORNECEDOR - '.$supplier->nome.' #'.$supplier->id }}
+        @endcomponent
         <div class="card mt-5 mb-5">
             <div class="card-header">
               <form action="{{ route('supplier.destroy', $supplier->id) }}" method="POST">
@@ -21,6 +23,7 @@
               <h6 class="card-title text-center"><span class="text-muted">nome: </span><span>{{ ucwords($supplier->nome) }}</span></h6>
               <h6 class="card-title text-center"><span class="text-muted">email: </span><span>{{ ucwords($supplier->email) }}</span></h6>
               <h6 class="card-title text-center"><span class="text-muted">cnpj: </span><span>{{ $supplier->cnpj }}</span></h6>
+              <h6 class="card-title text-center"><span class="text-muted">produtos: </span><span>{{ $supplier->produtos->count() }}</span></h6>
               <h6 class="card-title text-center"><span class="text-muted">status: </span><span>{{ $supplier->active ? 'ATIVO' : 'INATIVO' }}</span></h6>
             </div>
         </div>
