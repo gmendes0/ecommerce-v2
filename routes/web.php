@@ -11,13 +11,7 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', function(){
-    return view('templates.main');
-});
-
 Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::redirect('/', '/supplier');
 Route::resource('/supplier', 'Loja\FornecedoresController');
-Route::get('/home', 'HomeController@index')->name('home');
