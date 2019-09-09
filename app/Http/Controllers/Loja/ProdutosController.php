@@ -18,6 +18,9 @@ class ProdutosController extends Controller
 	public function index()
 	{
 		$produtos = Produto::all();
+		// $produtos = Produto::select('*')
+		// 	->withTrashed()
+		// 	->get();
 		return view('produto.index')->with(['produtos' => $produtos]);
 	}
 
@@ -72,7 +75,12 @@ class ProdutosController extends Controller
 	 */
 	public function edit($id)
 	{
-		//
+		$produto = Produto::findOrFail($id);
+		$fornecedores = Fornecedor::select('id', 'nome')
+			->where('active', 1)
+			->get();
+
+		return view('produto.create')->with(['produto' => $produto, 'fornecedores' => $fornecedores]);
 	}
 
 	/**
@@ -82,9 +90,15 @@ class ProdutosController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, $id)
+	public function update(ProdutoRequest $request, $id)
 	{
-		//
+		$update = Produto::findOrFail($id)->update($request->all());
+
+		if($update){
+			return redirect()->route('product.index');
+		}else{
+			return redirect()->back();
+		}
 	}
 
 	/**
@@ -95,6 +109,12 @@ class ProdutosController extends Controller
 	 */
 	public function destroy($id)
 	{
-		//
+		$delete = Produto::findOrFail($id)->delete();
+
+		if($delete){
+			return redirect()->route('product.index');
+		}else{
+			return redirect()->back();
+		}
 	}
 }

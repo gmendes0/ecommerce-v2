@@ -27,9 +27,13 @@
             <td class="moeda">{{ $produto->valor }}</td>
             <td>{{ $produto->active ? 'ativo' : 'inativo' }}</td>
             <td class="text-right">
-              <a href="{{ route('product.show', $produto->id) }}" class="btn btn-info">Info</a>
-              <a href="#" class="btn btn-warning">Editar</a>
-              <a href="#" class="btn btn-danger">Apagar</a>
+              <form action="{{ route('product.destroy', $produto->id) }}" method="post">
+                <a href="{{ route('product.show', $produto->id) }}" class="btn btn-info">Info</a>
+                <a href="{{ route('product.edit', $produto->id) }}" class="btn btn-warning">Editar</a>
+                <input type="submit" value="Apagar" class="btn btn-danger"/>
+                @method('DELETE')
+                @csrf
+              </form>
             </td>
           </tr>
         @empty

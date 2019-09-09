@@ -21,6 +21,7 @@
     <div class="card-body">
       <h6 class="card-title text-center"><span class="text-muted">nome: </span><span>{{ ucwords($produto->nome) }}</span></h6>
       <h6 class="card-title text-center"><span class="text-muted">valor: </span><span class='moeda'>{{ $produto->valor }}</span></h6>
+      <h6 class="card-title text-center"><span class="text-muted">descrição: </span><span>{{ empty($produto->descricao) ? 'Nenhum' : $produto->descricao }}</span></h6>
       <h6 class="card-title text-center"><span class="text-muted">fornecedor: </span><span>{{ $produto->fornecedor->nome }}</span></h6>
       <h6 class="card-title text-center"><span class="text-muted">status: </span><span>{{ $produto->active ? 'ATIVO' : 'INATIVO' }}</span></h6>
     </div>
