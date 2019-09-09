@@ -9,7 +9,7 @@ class Produto extends Model
 {
 	use SoftDeletes;
 
-	protected $fillable = ['nome', 'valor', 'descricao', 'active'];
+	protected $fillable = ['nome', 'valor', 'descricao', 'active', 'fornecedor_id'];
 
 	protected function fornecedor(){
 		return $this->belongsTo('App\Entities\Fornecedor');

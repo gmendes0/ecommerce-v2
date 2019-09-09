@@ -15,6 +15,7 @@
           <td>Nome</td>
           <td>Valor</td>
           <td>Status</td>
+          <td class="text-right pr-5 mr-5">Ações</td>
         </tr>
       </thead>
 
@@ -23,8 +24,13 @@
           <tr>
             <td>#{{ $produto->id }}</td>
             <td>{{ $produto->nome }}</td>
-            <td>{{ $produto->valor }}</td>
+            <td class="moeda">{{ $produto->valor }}</td>
             <td>{{ $produto->active ? 'ativo' : 'inativo' }}</td>
+            <td class="text-right">
+              <a href="{{ route('product.show', $produto->id) }}" class="btn btn-info">Info</a>
+              <a href="#" class="btn btn-warning">Editar</a>
+              <a href="#" class="btn btn-danger">Apagar</a>
+            </td>
           </tr>
         @empty
           <tr>

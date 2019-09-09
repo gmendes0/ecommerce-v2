@@ -8,6 +8,13 @@
   @endcomponent
 
   <div class="container">
+    @if(isset($errors) && !empty($errors->all()))
+      @foreach ($errors->all() as $error)
+        @component('components.error_alert')
+          {{ $error }}
+        @endcomponent
+      @endforeach
+    @endif
     <form action="{{ route('product.store') }}" method="POST">
       <div class="row my-5">
         <div class="col-12 col-md-1">
@@ -22,7 +29,15 @@
           <label class="col-form-label" for="valor">Valor</label>
         </div>
         <div class="col-12 col-md-11">
-          <input class="form-control" type="number" name="valor" id="valor" max="9999999.99" value="{{ old('valor') ?? ''}}" required/>
+          <input class="form-control" type="number" name="valor" id="valor" step="0.01" max="9999999.99" value="{{ old('valor') ?? ''}}" required/>
+        </div>
+      </div>
+      <div class="row my-5">
+        <div class="col-12 col-md-1">
+          <label class="col-form-label" for="descricao">Descrição</label>
+        </div>
+        <div class="col-12 col-md-11">
+          <textarea class="form-control" name="descricao" id="descricao" rows="5">{{ old('descricao') ?? '' }}</textarea>
         </div>
       </div>
       <div class="row my-5">
