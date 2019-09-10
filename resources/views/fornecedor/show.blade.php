@@ -8,7 +8,7 @@
   {{ 'FORNECEDOR - '.$supplier->nome.' #'.$supplier->id }}
   @endcomponent
   <div class="container">
-    <div class="card mt-5 mb-5">
+    <div class="card mt-5 mb-5 shadow">
         <div class="card-header">
           <form action="{{ route('supplier.destroy', $supplier->id) }}" method="POST">
             <!-- link edit -->

@@ -16,4 +16,6 @@ Auth::routes();
 Route::redirect('/', '/product');
 Route::resource('/supplier', 'Loja\FornecedoresController');
 Route::resource('/product', 'Loja\ProdutosController');
-Route::resource('/photo', 'Loja\PhotosController');
+Route::get('/photo/{id}/upload', 'Loja\PhotosController@create')->name('photo.create');
+Route::post('/photo/{id}/store', 'Loja\PhotosController@store')->name('photo.store');
+Route::resource('/photo', 'Loja\PhotosController')->except(['create', 'store']);

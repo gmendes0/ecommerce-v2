@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white p-4 sticky-top shadow">
+<nav class="navbar navbar-expand-lg navbar-light bg-white p-4 sticky-top shadow-sm">
   <div class="container-fluid">
     <a href="#" class="navbar-brand h1 mb-0">Master Tech</a>
     <!-- Navbar Toggler -->

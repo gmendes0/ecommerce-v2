@@ -6,6 +6,8 @@ window.onload = () => {
   const myDefaultTop = 100
   const myNavbarPadding = 'p-3'
   const myNavbarStartPadding = 'p-4'
+  const startNavbarShadow = 'shadow-sm'
+  const myNavbarShadow = 'shadow-lg'
 
   const ajustarNavbar = () => {
 
@@ -14,16 +16,20 @@ window.onload = () => {
       if (!isOnTop(myDefaultTop + myDefaultTop * 0.15)) {
   
         navbar.classList.remove(myNavbarStartPadding)
-        navbar.style.transition = '.7s'
+        navbar.classList.remove(startNavbarShadow)
+        navbar.style.transition = '.5s'
         navbar.classList.add(myNavbarPadding)
+        navbar.classList.add(myNavbarShadow)
       }
     } else if (navbar.classList.contains(myNavbarPadding)) {
 
       if (isOnTop(myDefaultTop)) {
 
         navbar.classList.remove(myNavbarPadding)
+        navbar.classList.remove(myNavbarShadow)
         navbar.style.transition = '.7s'
         navbar.classList.add(myNavbarStartPadding)
+        navbar.classList.add(startNavbarShadow)
       }
     }
   }

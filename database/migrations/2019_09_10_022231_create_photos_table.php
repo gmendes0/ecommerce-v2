@@ -17,6 +17,7 @@ class CreatePhotosTable extends Migration
 			$table->bigIncrements('id');
 			$table->string('name', 255);
 			$table->string('extension', 5);
+			$table->string('path', 255);
 			$table->unsignedBigInteger('produto_id');
 			$table->foreign('produto_id')
 						->references('id')
