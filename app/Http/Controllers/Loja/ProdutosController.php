@@ -48,7 +48,7 @@ class ProdutosController extends Controller
 	{
 		$insert = Produto::create($request->all());
 		if($insert){
-			return redirect()->route('product.index');
+			return redirect()->route('product.show', $insert->id);
 		}else{
 			return redirect()->back();
 		}
