@@ -17,7 +17,7 @@ class ProdutosController extends Controller
 	 */
 	public function index()
 	{
-		$produtos = Produto::all();
+		$produtos = Produto::simplePaginate(5);
 		// $produtos = Produto::select('*')
 		// 	->withTrashed()
 		// 	->get();

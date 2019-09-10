@@ -43,5 +43,9 @@
         @endforelse
       </tbody>
     </table>
+
+    <div class="row justify-content-center my-5">
+      {{ $produtos->links() }}
+    </div>
   </div>
 @endsection
