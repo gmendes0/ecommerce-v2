@@ -37,8 +37,9 @@
         @endforelse
       </tbody>
     </table>
+
+    @component('components.pages')
+      {{ $fornecedores->links() }}
+    @endcomponent
   </div>
 @endsection
-@push('jscripts')
-
-@endpush

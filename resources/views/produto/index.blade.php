@@ -8,7 +8,7 @@
   @endcomponent
 
   <div class="container">
-    <table class="table">
+    <table class="table shadow-lg">
       <thead class="table-dark">
         <tr>
           <td>ID</td>
@@ -38,14 +38,14 @@
           </tr>
         @empty
           <tr>
-            <td colspan="4">Nenhum produto encontrado. <a href="#">Cadastrar novo produto</a></td>
+            <td colspan="5" class="text-center">Nenhum produto encontrado. <a href="{{ route('product.create') }}">Cadastrar novo produto</a></td>
           </tr>
         @endforelse
       </tbody>
     </table>
 
-    <div class="row justify-content-center my-5">
+    @component('components.pages')
       {{ $produtos->links() }}
-    </div>
+    @endcomponent
   </div>
 @endsection
