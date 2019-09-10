@@ -16,3 +16,4 @@ Auth::routes();
 Route::redirect('/', '/product');
 Route::resource('/supplier', 'Loja\FornecedoresController');
 Route::resource('/product', 'Loja\ProdutosController');
+Route::resource('/photo', 'Loja\PhotosController');

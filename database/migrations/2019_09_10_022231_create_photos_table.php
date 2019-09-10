@@ -22,6 +22,7 @@ class CreatePhotosTable extends Migration
 						->references('id')
 						->on('produtos')
 						->onDelete('cascade');
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}

@@ -14,4 +14,8 @@ class Produto extends Model
 	protected function fornecedor(){
 		return $this->belongsTo('App\Entities\Fornecedor');
 	}
+
+	protected function photos(){
+		return $this->hasMany('App\Entities\Photo');
+	}
 }

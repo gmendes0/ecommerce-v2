@@ -1,10 +1,10 @@
 @extends('templates.main')
 
 @section('content')
+@component('components.title')
+{{ __('Registrar') }}
+@endcomponent
 <div class="container">
-	@component('components.title')
-		{{ __('Registrar') }}
-	@endcomponent
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

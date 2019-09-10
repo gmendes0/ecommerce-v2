@@ -1,10 +1,10 @@
 @extends('templates.main')
 @section('title', isset($supplier) ? 'Editar Fornecedor' : 'Novo Fornecedor')
 @section('content')
+  @component('components.title')
+    {{ isset($supplier) ? 'Editar Fornecedor - #'.$supplier->id : 'Novo Fornecedor'}}
+  @endcomponent
   <div class="container">
-    @component('components.title')
-      {{ isset($supplier) ? 'Editar Fornecedor - #'.$supplier->id : 'Novo Fornecedor'}}
-    @endcomponent
 
     @if(!empty($errors->all()))
       @foreach($errors->all() as $error)

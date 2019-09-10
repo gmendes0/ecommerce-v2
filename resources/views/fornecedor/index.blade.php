@@ -1,10 +1,11 @@
 @extends('templates.main')
 @section('title', 'Lista Fornecedores')
 @section('content')
+  @component('components.title')
+  {{ __('Fornecedores') }}
+  @endcomponent
+  
   <div class="container">
-    <div class="col-12 p-5 mb-5">
-      <h2 class="text-center text-muted">Fornecedores</h2>
-    </div>
 
     <table class="table shadow-lg">
       <thead class="table-dark">

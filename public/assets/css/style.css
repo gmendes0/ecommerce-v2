@@ -102,7 +102,7 @@
 }
 
 .titulo-bg{
-    background: url('../assets/imgs/bgs/bgTitulo.jpg');
+    background: url('../../bgTitulo.jpg');
     background-position: -15px;
     background-repeat: repeat-x;
     width: 100%;
