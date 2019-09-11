@@ -25,7 +25,7 @@ class FornecedorRequest extends FormRequest
     {
         return [
             'nome' => 'required|min:1|max:100',
-            'email' => 'required|min:1|max:255',
+            'email' => 'required|min:1|max:255|email',
             'cnpj' => 'required|min:14|max:14',
             'active' => 'required|numeric|min:0|max:1',
         ];

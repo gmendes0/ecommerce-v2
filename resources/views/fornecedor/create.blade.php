@@ -22,7 +22,8 @@
           <label class="col-form-label" for="nome">Nome</label>
         </div>
         <div class="col-12 col-md-11">
-          <input class="form-control" type="text" name="nome" id="nome" maxlength="100" value="{{ old('nome') ?? $supplier->nome ?? '' }}" required/>
+          <input class="form-control" type="text" name="nome" id="nome" maxlength="100" value="{{ old('nome') ?? $supplier->nome ?? '' }}"/>
+          <div id="nome-feedback"></div>
         </div>
       </div>
       <div class="row my-5">
@@ -30,7 +31,8 @@
           <label class="col-form-label" for="email">Email</label>
         </div>
         <div class="col-12 col-md-11">
-          <input class="form-control" type="email" name="email" id="email" maxlength="255" value="{{ old('email') ?? $supplier->email ?? ''}}" required/>
+          <input class="form-control" type="email" name="email" id="email" maxlength="255" value="{{ old('email') ?? $supplier->email ?? ''}}"/>
+          <div id="email-feedback"></div>
         </div>
       </div>
       <div class="row my-5">
@@ -38,7 +40,8 @@
           <label class="col-form-label" for="cnpj">CNPJ</label>
         </div>
         <div class="col-12 col-md-11">
-          <input class="form-control" type="number" name="cnpj" id="cnpj" max="99999999999999" value="{{ old('cnpj') ?? $supplier->cnpj ?? ''}}" required/>
+          <input class="form-control" type="number" name="cnpj" id="cnpj" max="99999999999999" value="{{ old('cnpj') ?? $supplier->cnpj ?? ''}}"/>
+          <div id="cnpj-feedback"></div>
         </div>
       </div>
       <div class="row my-5">
@@ -53,7 +56,8 @@
         </div>
       </div>
       <div class="text-center">
-        <input class="btn btn-success mb-5" type="submit" value="{{isset($supplier) ? 'atualizar' : 'cadastrar'}}"/>
+        <a href="" class="btn btn-success mb-5" id="btnSubmit">{{isset($supplier) ? 'atualizar' : 'cadastrar'}}</a>
+        {{-- <input class="btn btn-success mb-5" type="submit" value="{{isset($supplier) ? 'atualizar' : 'cadastrar'}}"/> --}}
       </div>
       @if(isset($supplier))
         @method('PUT')
@@ -62,3 +66,7 @@
     </form>
   </div>
 @endsection
+
+@push('jscripts')
+  <script src="{{ asset('assets/js/validators/fornecedores.js') }}"></script>
+@endpush
