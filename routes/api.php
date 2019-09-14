@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::post('/photo/save', 'Loja\PhotosApiController@store')->name('photo.api.save');
+Route::post('/photo/{id}/save', 'Loja\PhotoApiController@store')->name('photo.api.save');
