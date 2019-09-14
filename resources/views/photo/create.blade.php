@@ -44,7 +44,7 @@
 
     {{-- Submit via JS --}}
     <form enctype="multipart/form-data" id="photo-form" method="POST">
-      <div id="arquivos" data-url="{{ route('photo.api.save', $produto->id) }}">
+      <div id="arquivos" data-url="{{ route('photo.api.save', $produto->id) }}" data-redirect="{{ route('product.show', $produto->id) }}">
         <div class="row justify-content-center">
           <div class="col-12 col-sm-10 my-2">
             <div class="card p-2">

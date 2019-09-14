@@ -87,6 +87,7 @@ window.onload = () => {
             }else{
 
               myAlert.dumpSuccess(`Operação realizada com sucesso`)
+              setTimeout(() => window.location = arquivosContainer.getAttribute('data-redirect'), 500)
             }
             console.log(json)
           }
